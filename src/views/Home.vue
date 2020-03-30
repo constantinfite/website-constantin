@@ -45,7 +45,7 @@
         <v-divider></v-divider>
       </v-row>
       <v-row justify="center" align="center" class="my-12" id="avis">
-        <div class="display-3 ">Mes avis</div>
+        <div class="display-3">Mes avis</div>
       </v-row>
 
       <v-row justify="center" align="center">
@@ -84,14 +84,12 @@ export default {
           img: "acadomia.png",
           date: "2018 - 2019",
           text:
-            "J'ai été professeur avec Acadomia, j'ai enseigné à  des élèves de la 3ème à la Terminal",
-          right: false
+            "J'ai été professeur avec Acadomia, j'ai enseigné à  des élèves de la 3ème à la Terminal"
         },
         {
           title: "Professeur d'anglais et de mathématiques",
           img: "photo_enfant.jpeg",
           date: "6 semaines à Bali",
-          right: true,
           text:
             "J'ai eu la chance de faire mon stage d'engagement citoyen à Bali. J'ai enseigné l'enseigné l'anglais et les mathématiques à des élèves de 13 à 14 ans"
         },
@@ -99,7 +97,6 @@ export default {
           title: "Tuteur dans mon école d'ingénieur EPF",
           img: "logo_epf_0.png",
           date: "2017 - 2018",
-          right: false,
           text:
             "J'ai été tuteur dans mon école d'ingénieur auprès des 1ères années "
         },
@@ -107,7 +104,6 @@ export default {
           title: "Professeur particulier",
           img: "logo_epf_0.png",
           date: "2017 - 2018",
-          right: true,
           text: "J'ai été professeur avec Acadomia"
         }
       ]

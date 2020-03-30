@@ -41,12 +41,18 @@
     <v-navigation-drawer v-model="drawer" app class="indigo">
       <v-list>
         <v-list-item v-for="link in links" :key="link.text">
+          <v-btn
+            @click="$vuetify.goTo(link.id, options)"
+            class="white--text "
+            text
+          >
+            {{ link.text }}
+          </v-btn>
+          <!--
           <v-list-item-icon>
             <v-icon class="white--text">{{ link.icon }}</v-icon>
           </v-list-item-icon>
-          <v-btn @click="$vuetify.goTo(link.id, options)" text>
-            {{ link.text }}
-          </v-btn>
+          //-->
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

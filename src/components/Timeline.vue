@@ -11,7 +11,7 @@
       </span>
 
       <v-card flat>
-        <v-card-title>{{ career.title }}</v-card-title>
+        <v-card-title class="card-title">{{ career.title }}</v-card-title>
         <v-card-subtitle>{{ career.lieu }}</v-card-subtitle>
         <v-card-text>{{ career.text }}</v-card-text>
       </v-card>
@@ -53,6 +53,8 @@ export default {
 };
 </script>
 
-<style lang="sass">
-@import './src/sass/variables.sass'
+<style >
+.card-title {
+  word-break: normal;
+}
 </style>
