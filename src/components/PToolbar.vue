@@ -7,7 +7,7 @@
       ></v-app-bar-nav-icon>
 
       <v-toolbar-title class="text-uppercase grey--text ml-8">
-        <span class="font-weight-light">Constantin</span>
+        <span class="font-weight-light">Constantin </span>
         <span class>F.</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>

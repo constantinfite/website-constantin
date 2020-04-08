@@ -1,28 +1,58 @@
 <template>
   <div class="home">
-    <v-img src="../assets/background.png" dark max-height="600px">
+    <v-img src="../assets/background.png" dark max-height="1000px">
       <v-layout fill-height>
         <v-container>
           <v-row class="grey--text">
-            <v-col>
-              <div class="black--text font-weight-bold display-3 pt-10">Bienvenue</div>
-              <div class="black--text display-2 pt-5">Je suis professeur particulier de</div>
-              <v-row class="py-10">
-                <v-col>
-                  <v-card flat>
-                    <v-card-title>Mathématiques</v-card-title>
+            <v-col cols="12" md="12" lg="12">
+              <div class="black--text display-1 pt-10">
+                Je m'appelle
+                <span class="black--text font-weight-bold display-1"
+                  >Constantin</span
+                >
+              </div>
+              <div class="black--text headline pt-5">
+                Je suis
+                <span class="black--text headline font-weight-bold"
+                  >professeur particulier</span
+                >
+                de la 6ème jusqu'à la Terminale
+              </div>
+              <div class="black--text headline py-5">
+                J'effectue les cours en ligne
+              </div>
+              <v-row class="py-10" justify="center" align="center">
+                <v-col
+                  cols="7"
+                  md="4"
+                  lg="3"
+                  v-for="(matiere, i) in matières"
+                  :key="i"
+                  class="timeline px-5"
+                >
+                  <v-card>
+                    <v-img
+                      :src="logo(matiere.img)"
+                      dark
+                      max-height="500px"
+                    ></v-img>
+                    <v-card-title class="justify-center font-weight-bold">
+                      {{ matiere.title }}
+                    </v-card-title>
+                    <v-card-text class="texte">{{ matiere.text }}</v-card-text>
                   </v-card>
                 </v-col>
-                <v-col>
-                  <v-card flat>
-                    <v-card-title>Physiques</v-card-title>
-                  </v-card>
-                </v-col>
-                <v-col>
-                  <v-card flat>
-                    <v-card-title>Programmation</v-card-title>
-                  </v-card>
-                </v-col>
+              </v-row>
+              <v-row justify="center" align="center">
+              <div class="my-2 pt-10"  >
+                <v-btn
+                  rounded
+                  x-large
+                  color="primary"
+                  @click="$vuetify.goTo('#contact', option)"
+                  >Contactez moi</v-btn
+                >
+              </div>
               </v-row>
             </v-col>
           </v-row>
@@ -48,7 +78,14 @@
         <div class="display-3">Mon expérience</div>
       </v-row>
       <v-row justify="center" class="background">
-        <v-col cols="9" md="12" lg="11" v-for="(exp, i) in exps" :key="i" class="timeline">
+        <v-col
+          cols="9"
+          md="12"
+          lg="11"
+          v-for="(exp, i) in exps"
+          :key="i"
+          class="timeline"
+        >
           <PExperience :exp="exp" :right="exp.right" />
         </v-col>
       </v-row>
@@ -87,17 +124,45 @@ export default {
     PExperience,
     Contact
   },
+  methods: {
+    logo(name) {
+      return require("../assets/" + name);
+    }
+  },
   data() {
     return {
+      options: {
+        duration: 300,
+        offset: 0,
+        easing: "easeInOutCubic"
+      },
+      matières: [
+        {
+          title: "Mathématiques",
+          text: "Une vision différente avec Géogébra",
+          img: "maths.png"
+        },
+
+        {
+          title: "Physiques / Chimies",
+          text: "Des applications concretes de la physique",
+          img: "physics.png"
+        },
+        {
+          title: "Programmation",
+          text: "Apprendre les bases de la programmation en Python",
+          img: "programmation.png"
+        }
+      ],
       exps: [
         {
-          title: "Professeur particulier",
+          title: "Professeur particulier à domicile et en ligne",
           img: "photo_moi.jpg",
           date: "2019 - Maintenant",
           text: "J'ai été professeur avec Acadomia"
         },
         {
-          title: "Professeur au sein d'Acadomia",
+          title: "Professeur au sein d'Acadomia et Complétude",
           img: "acadomia.png",
           date: "2018 - 2019",
           text:
@@ -131,6 +196,7 @@ export default {
 .timeline {
 }
 
-.background {
+.texte {
+  text-align: center;
 }
 </style>

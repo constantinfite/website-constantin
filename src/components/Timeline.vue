@@ -30,7 +30,7 @@ export default {
           date: "2016 - 2021",
           text:
             "J’ai enseigné les mathématiques et l'anglais à des élèves à Bali",
-          color: "red lighten-1"
+          color: "blue lighten-1"
         },
         {
           lieu: "Lycée Cézanne Aix-en-Provence",
@@ -38,7 +38,7 @@ export default {
           date: "2015 - 2016",
           text:
             "Cette année en classe préparatoire m'a permis d'apprendre une bonne rigueur de travail et u",
-          color: "amber"
+          color: "blue lighten-1"
         },
         {
           lieu: "Lycée Aubanel Avignon",
@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 .card-title {
   word-break: normal;
 }
