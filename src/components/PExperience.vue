@@ -8,7 +8,7 @@
       </v-card>
     </v-col>
     <v-col>
-      <v-img :src="logo(exp.img)" max-width="400px" />
+      <v-img :src="logo(exp.img)" max-width="400px" max-height="300px" contain />
     </v-col>
   </v-row>
 </template>
