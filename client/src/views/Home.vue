@@ -96,6 +96,10 @@
         <div class="display-3">Mes avis</div>
       </v-row>
 
+      <v-row justify="center" align="center" class="my-12" id="avis">
+        <PostComponent/>
+      </v-row>
+
       <v-row justify="center" align="center">
         <v-divider></v-divider>
       </v-row>
@@ -116,13 +120,15 @@
 import Timeline from "@/components/Timeline.vue";
 import PExperience from "@/components/PExperience.vue";
 import Contact from "@/components/Contact.vue";
+import PostComponent from '@/components/PostComponent';
 
 export default {
   name: "Home",
   components: {
     Timeline,
     PExperience,
-    Contact
+    Contact,
+    PostComponent
   },
   methods: {
     logo(name) {
