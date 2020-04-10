@@ -1,16 +1,13 @@
 <template>
   <div class="home">
     <v-img src="../assets/background.png" dark max-height="1000px">
-      <v-layout fill-height>
-        <v-container >
+      <v-row fill-height>
+        <v-container>
           <v-row class="grey--text">
             <v-col cols="12" md="12" lg="12">
               <div class="black--text display-1 pt-10">
                 Je m'appelle
-                <v-sheet
-                  width="200px"
-                  class="orange lighten-2--text font-weight-bold display-1"
-                >Constantin</v-sheet>
+                <v-sheet width="200px" class="cyan accent-3 font-weight-bold display-1">Constantin</v-sheet>
               </div>
               <div class="black--text headline pt-5">
                 Je suis
@@ -20,8 +17,8 @@
               <div class="black--text headline py-5">J'effectue les cours en ligne</div>
               <v-row class="py-10" justify="center" align="center">
                 <v-col
-                  cols="7"
-                  md="4"
+                  cols="5"
+                  md="3"
                   lg="3"
                   v-for="(matiere, i) in matières"
                   :key="i"
@@ -47,17 +44,17 @@
             </v-col>
           </v-row>
         </v-container>
-      </v-layout>
+      </v-row>
     </v-img>
     <v-container class="mt-5">
       <v-row justify="center" align="center">
         <v-divider></v-divider>
       </v-row>
-      <v-row justify="center" align="center" class="my-12" id="parcours">
+      <div justify="center" align="center" class="my-12" id="parcours">
         <div class="display-3">Mon parcours</div>
-      </v-row>
-      <v-row>
-        <v-col>
+      </div>
+      <v-row justify="center">
+        <v-col cols="10" md="8" lg="10">
           <Timeline class="timeline" />
         </v-col>
       </v-row>
@@ -75,11 +72,11 @@
       <v-row justify="center" align="center" class="pt-12">
         <v-divider></v-divider>
       </v-row>
-      <v-row justify="center" align="center" class="my-12" id="avis">
+      <v-row justify="center" align="center" class="mt-12" id="avis">
         <div class="display-3">Mes avis</div>
       </v-row>
 
-      <v-row justify="center" align="center" class="my-12" id="avis">
+      <v-row justify="center" class="mb-12 mt-5" id="avis">
         <PostComponent />
       </v-row>
 
