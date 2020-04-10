@@ -2,25 +2,22 @@
   <div class="home">
     <v-img src="../assets/background.png" dark max-height="1000px">
       <v-layout fill-height>
-        <v-container>
+        <v-container >
           <v-row class="grey--text">
             <v-col cols="12" md="12" lg="12">
               <div class="black--text display-1 pt-10">
                 Je m'appelle
-                <span class="black--text font-weight-bold display-1"
-                  >Constantin</span
-                >
+                <v-sheet
+                  width="200px"
+                  class="orange lighten-2--text font-weight-bold display-1"
+                >Constantin</v-sheet>
               </div>
               <div class="black--text headline pt-5">
                 Je suis
-                <span class="black--text headline font-weight-bold"
-                  >professeur particulier</span
-                >
+                <span class="black--text headline font-weight-bold">professeur particulier</span>
                 de la 6ème jusqu'à la Terminale
               </div>
-              <div class="black--text headline py-5">
-                J'effectue les cours en ligne
-              </div>
+              <div class="black--text headline py-5">J'effectue les cours en ligne</div>
               <v-row class="py-10" justify="center" align="center">
                 <v-col
                   cols="7"
@@ -31,28 +28,21 @@
                   class="timeline px-5"
                 >
                   <v-card>
-                    <v-img
-                      :src="logo(matiere.img)"
-                      dark
-                      max-height="500px"
-                    ></v-img>
-                    <v-card-title class="justify-center font-weight-bold">
-                      {{ matiere.title }}
-                    </v-card-title>
+                    <v-img :src="logo(matiere.img)" dark max-height="500px"></v-img>
+                    <v-card-title class="justify-center font-weight-bold">{{ matiere.title }}</v-card-title>
                     <v-card-text class="texte">{{ matiere.text }}</v-card-text>
                   </v-card>
                 </v-col>
               </v-row>
               <v-row justify="center" align="center">
-              <div class="my-2 pt-10"  >
-                <v-btn
-                  rounded
-                  x-large
-                  color="primary"
-                  @click="$vuetify.goTo('#contact', option)"
-                  >Contactez moi</v-btn
-                >
-              </div>
+                <div class="my-2 pt-10">
+                  <v-btn
+                    rounded
+                    x-large
+                    color="primary"
+                    @click="$vuetify.goTo('#contact', option)"
+                  >Contactez moi</v-btn>
+                </div>
               </v-row>
             </v-col>
           </v-row>
@@ -78,14 +68,7 @@
         <div class="display-3">Mon expérience</div>
       </v-row>
       <v-row justify="center" class="background">
-        <v-col
-          cols="9"
-          md="12"
-          lg="11"
-          v-for="(exp, i) in exps"
-          :key="i"
-          class="timeline"
-        >
+        <v-col cols="9" md="12" lg="11" v-for="(exp, i) in exps" :key="i" class="timeline">
           <PExperience :exp="exp" :right="exp.right" />
         </v-col>
       </v-row>
@@ -97,7 +80,7 @@
       </v-row>
 
       <v-row justify="center" align="center" class="my-12" id="avis">
-        <PostComponent/>
+        <PostComponent />
       </v-row>
 
       <v-row justify="center" align="center">
@@ -120,7 +103,7 @@
 import Timeline from "@/components/Timeline.vue";
 import PExperience from "@/components/PExperience.vue";
 import Contact from "@/components/Contact.vue";
-import PostComponent from '@/components/PostComponent';
+import PostComponent from "@/components/PostComponent";
 
 export default {
   name: "Home",
