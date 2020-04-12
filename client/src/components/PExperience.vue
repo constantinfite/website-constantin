@@ -1,10 +1,10 @@
 <template>
-  <v-row align="center">
+  <v-row justify="center">
     <v-col>
       <v-card flat color="transparent" class="card">
         <v-card-title class="font-weight-bold card-title">{{ exp.title }}</v-card-title>
         <v-card-subtitle>{{ exp.date }}</v-card-subtitle>
-        <v-card-text  >{{ exp.text }}</v-card-text>
+        <v-card-text>{{ exp.text }}</v-card-text>
       </v-card>
     </v-col>
     <v-col>

@@ -1,8 +1,8 @@
 <template>
   <v-app class="grey lighten-5">
-    <p-toolbar class />
+    <p-toolbar  />
 
-    <v-content>
+    <v-content >
       <router-view />
     </v-content>
 

@@ -1,53 +1,38 @@
 <template>
   <nav>
-    <v-app-bar app flat color="grey lighten-4">
-      <v-app-bar-nav-icon
-        class="hidden-sm-and-up ml-8"
-        @click="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+    <v-app-bar color="transparent" elevation="2" height="100" class="app-bar">
+      <v-app-bar-nav-icon class="hidden-sm-and-up ml-8" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="text-uppercase grey--text ml-8">
-        <span class="font-weight-light">Constantin </span>
-        <span class>F.</span>
+        <span class="font-weight-light black--text">Constantin</span>
+        <span class="black--text">F.</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only mr-12">
-        <v-btn @click="$vuetify.goTo('#parcours', options)" text
-          >Mon parcours</v-btn
-        >
-        <v-btn @click="$vuetify.goTo('#experience', options)" text
-          >Mon experience</v-btn
-        >
+      <div class="hidden-md-only">
         <v-btn
-          dark
+          v-for="(bouton, i) in boutons"
+          :key="i"
           rounded
-          color="grey darken-4"
-          @click="$vuetify.goTo('#avis', options)"
+          class="black--text bouton-header font-weight-bold"
+          @click="$vuetify.goTo(bouton.tag, options)"
           text
-          >avis</v-btn
-        >
+        >{{bouton.text}}</v-btn>
 
         <v-btn
-          dark
           rounded
+          elevation="1"
           color="primary"
+          class=" ml-3 font-weight-bold"
           @click="$vuetify.goTo('#contact', options)"
-          text
-          >Contact</v-btn
-        >
-      </v-toolbar-items>
+          
+        >Contact</v-btn>
+      </div>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app class="indigo">
       <v-list>
         <v-list-item v-for="link in links" :key="link.text">
-          <v-btn
-            @click="$vuetify.goTo(link.id, options)"
-            class="white--text "
-            text
-          >
-            {{ link.text }}
-          </v-btn>
+          <v-btn @click="$vuetify.goTo(link.id, options)" class="white--text" text>{{ link.text }}</v-btn>
           <!--
           <v-list-item-icon>
             <v-icon class="white--text">{{ link.icon }}</v-icon>
@@ -71,6 +56,20 @@ export default {
         offset: 0,
         easing: "easeInOutCubic"
       },
+      boutons: [
+        {
+          text: "Mon parcours",
+          tag: "#parcours"
+        },
+        {
+          text: "Mon experience",
+          tag: "#experience"
+        },
+        {
+          text: "Mes avis",
+          tag: "#avis"
+        }
+      ],
       links: [
         { icon: "mdi-school", text: "Mon parcours", id: "#parcours" },
         { icon: "mdi-teach", text: "Mon expérience", id: "#experience" },
@@ -85,5 +84,12 @@ export default {
 <style>
 .v-toolbar__content {
   padding: 0px !important;
+}
+
+.app-bar {
+  padding: 0 20%;
+}
+
+.bouton-header {
 }
 </style>
