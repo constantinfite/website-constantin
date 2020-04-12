@@ -1,19 +1,14 @@
 <template>
   <v-timeline>
-    <v-timeline-item
-      v-for="(career, i) in careers"
-      :key="i"
-      :color="career.color"
-      small="true"
-    >
+    <v-timeline-item v-for="(career, i) in careers" :key="i" :color="career.color" small="true">
       <span slot="opposite" class="align-self-center">
-        <div>{{ career.date }}</div>
+        <div class="title">{{ career.date }}</div>
       </span>
 
-      <v-card >
-        <v-card-title class="card-title">{{ career.title }}</v-card-title>
-        <v-card-subtitle>{{ career.lieu }}</v-card-subtitle>
-        <v-card-text>{{ career.text }}</v-card-text>
+      <v-card>
+        <v-card-title class="card-title font-weight-bold headline">{{ career.title }}</v-card-title>
+        <v-card-subtitle class="font-weight-bold subtitle-1">{{ career.lieu }}</v-card-subtitle>
+        <v-card-text class="font-weight-bold title">{{ career.text }}</v-card-text>
       </v-card>
     </v-timeline-item>
   </v-timeline>
@@ -54,7 +49,4 @@ export default {
 </script>
 
 <style>
-.card-title {
-  word-break: normal;
-}
 </style>
