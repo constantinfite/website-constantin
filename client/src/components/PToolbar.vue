@@ -1,14 +1,14 @@
 <template>
   <nav>
     <v-app-bar color="transparent" elevation="2" height="100" class="app-bar">
-      <v-app-bar-nav-icon class="hidden-sm-and-up ml-8" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="d-md-none ml-8" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="text-uppercase grey--text ml-8">
         <span class="font-weight-light black--text">Constantin</span>
         <span class="black--text">F.</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <div class="hidden-md-only">
+      <div class="d-none d-md-block">
         <v-btn
           v-for="(bouton, i) in boutons"
           :key="i"
@@ -22,7 +22,7 @@
           rounded
           elevation="1"
           color="primary"
-          class=" ml-3 font-weight-bold"
+          class=" ml-3 font-weight-bold bouton-header"
           @click="$vuetify.goTo('#contact', options)"
           
         >Contact</v-btn>
@@ -90,6 +90,5 @@ export default {
   padding: 0 20%;
 }
 
-.bouton-header {
-}
+
 </style>

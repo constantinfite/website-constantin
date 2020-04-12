@@ -29,7 +29,9 @@ export default {
 };
 </script>
 <style>
-.header {
-  background-color: cyan;
+
+
+.v-application {
 }
+
 </style>

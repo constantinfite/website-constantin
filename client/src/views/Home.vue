@@ -4,12 +4,10 @@
       <v-container>
         <v-row align="center" justify="center">
           <v-col cols="6" md="10" lg="10" xl="9">
-            <div class="black--text display-1 pt-10">
-              Je m'appelle Constantin             
-            </div>
-            <div class="black--text display-1 pt-5">
-              Je suis professeur particulier de la 6ème jusqu'à la Terminale
-            </div>
+            <div class="text-start display-1 pt-10" color="#545a72">Je m'appelle Constantin</div>
+            <div
+              class="black--text display-1 pt-5 text-start"
+            >Je suis professeur particulier de la 6ème jusqu'à la Terminale</div>
             <div class="grey--text text--darken-4 headline py-5">J'effectue les cours en ligne</div>
             <v-row class="py-10" justify="center" align="center">
               <v-col
@@ -19,22 +17,23 @@
                 xl="3"
                 v-for="(matiere, i) in matières"
                 :key="i"
-                class="timeline px-2"
+                class="px-2"
               >
                 <v-card max-width="300" color="#ffff">
                   <!--
                   <v-img :src="logo(matiere.img)" height="100"></v-img>-->
-                  <v-card-title 
-                  color="#545a72"
+                  <v-card-title
+                    color="#545a72"
                     class="justify-center font-weight-bold card-title"
                   >{{ matiere.title }}</v-card-title>
-                  <v-card-text color="#545a72" class="">{{ matiere.text }}</v-card-text>
+                  <v-card-text color="#545a72" class>{{ matiere.text }}</v-card-text>
                 </v-card>
               </v-col>
             </v-row>
             <v-row justify="center" align="center">
               <div class="my-2 pt-10">
                 <v-btn
+                  class="font-weight-bold bouton-header"
                   rounded
                   x-large
                   color="primary"
@@ -47,45 +46,49 @@
       </v-container>
     </v-layout>
 
-    <v-container class="mt-5">
-      <div justify="center" align="center" class="my-12" id="parcours">
-        <div class="display-3">Mon parcours</div>
+    <v-container fluid>
+      <div class="timeline pt-12">
+        <div
+          justify="center"
+          align="center"
+          class="pb-12 display-3"
+          id="parcours"
+        >Mon parcours professionnel</div>
+
+        <v-row justify="center" class="pb-12">
+          <v-col cols="10" md="8" lg="10" xl="8">
+            <Timeline class />
+          </v-col>
+        </v-row>
       </div>
-      <v-row justify="center">
-        <v-col cols="10" md="8" lg="10" xl="8">
-          <Timeline class="timeline" />
-        </v-col>
-      </v-row>
+      <div id="experience">
+        <div
+          justify="center"
+          align="center"
+          class="display-3 py-12"
+        >Mon expérience en tant que professeur</div>
 
-      <div justify="center" align="center" class="my-12" id="experience">
-        <div class="display-3">Mon expérience</div>
+        <v-row justify="center" class="pb-12 pt-10">
+          <v-col cols="9" md="12" lg="10" xl="7" v-for="(exp, i) in exps" :key="i">
+            <PExperience :exp="exp" :right="exp.right" />
+          </v-col>
+        </v-row>
       </div>
-      <v-row justify="center">
-        <v-col cols="9" md="12" lg="10" xl="7" v-for="(exp, i) in exps" :key="i" class="timeline">
-          <PExperience :exp="exp" :right="exp.right" />
-        </v-col>
-      </v-row>
-      <v-row justify="center" align="center" class="pt-12">
-        <v-divider></v-divider>
-      </v-row>
-      <v-row justify="center" align="center" class="mt-12" id="avis">
-        <div class="display-3">Mes avis</div>
-      </v-row>
 
-      <v-row justify="center" class="mb-12 mt-5" id="avis">
-        <PostComponent />
-      </v-row>
+      <div class="py-12 timeline" id="avis">
+        <div justify="center" align="center" class="display-3">Mes avis</div>
 
-      <v-row justify="center" align="center">
-        <v-divider></v-divider>
-      </v-row>
-      <v-row justify="center" align="center" class="mt-12" id="contact">
-        <div class="display-3">Contact</div>
-      </v-row>
+        <v-row justify="center" class="mb-12 mt-5" id="avis">
+          <PostComponent />
+        </v-row>
+      </div>
+      <div>
+        <div id="contact" justify="center" align="center" class="mt-12 display-3">Contact</div>
 
-      <v-row justify="center" align="center">
-        <Contact />
-      </v-row>
+        <div justify="center" align="center">
+          <Contact />
+        </div>
+      </div>
     </v-container>
   </div>
 </template>
@@ -141,14 +144,14 @@ export default {
           title: "Professeur particulier à domicile et en ligne",
           img: "photo_moi.jpg",
           date: "2019 - Maintenant",
-          text: "J'ai été professeur avec Acadomia"
+          text: "Depuis 1 an et demi j'effectue des cours particuliers à domicile "
         },
         {
           title: "Professeur au sein d'Acadomia et Complétude",
           img: "acadomia.png",
           date: "2018 - 2019",
           text:
-            "J'ai été professeur avec Acadomia, j'ai enseigné à  des élèves de la 3ème à la Terminal"
+            "J'ai été professeur avec Acadomia, j'ai enseigné à  des 5 élèves de la 3ème à la Terminal"
         },
         {
           title: "Professeur d'anglais et de mathématiques",
@@ -162,7 +165,7 @@ export default {
           img: "logo_epf_0.png",
           date: "2017 - 2018",
           text:
-            "J'ai été tuteur dans mon école d'ingénieur auprès des 1ères années "
+            "J'ai été tuteur dans mon école d'ingénieur auprès des 1ères années. J'ai enseigné la physique niveau Bac +1  "
         }
       ]
     };
@@ -176,6 +179,7 @@ export default {
 }
 
 .timeline {
+  background-color: #e6f4f1;
 }
 
 .texte {
@@ -183,5 +187,8 @@ export default {
 }
 .card-title {
   word-break: normal;
+}
+.text-start{
+  font-family: 'Space Mono', monospace;
 }
 </style>

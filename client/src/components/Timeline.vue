@@ -10,7 +10,7 @@
         <div>{{ career.date }}</div>
       </span>
 
-      <v-card flat>
+      <v-card >
         <v-card-title class="card-title">{{ career.title }}</v-card-title>
         <v-card-subtitle>{{ career.lieu }}</v-card-subtitle>
         <v-card-text>{{ career.text }}</v-card-text>
