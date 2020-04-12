@@ -1,8 +1,11 @@
 <template>
   <nav>
     <v-app-bar color="transparent" elevation="2" height="100" class="app-bar">
-      <v-app-bar-nav-icon class="d-md-none ml-8" @click="drawer = !drawer"></v-app-bar-nav-icon>
-      
+      <v-app-bar-nav-icon
+        class="d-md-none ml-8"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+
       <v-toolbar-title class="text-uppercase grey--text ml-8">
         <span class="font-weight-light black--text">Constantin</span>
         <span class="black--text">F.</span>
@@ -14,9 +17,10 @@
           :key="i"
           rounded
           class="black--text bouton-header font-weight-bold"
-          @click="$vuetify.goTo(bouton.tag, options)"
           text
-        >{{bouton.text}}</v-btn>
+          @click="$vuetify.goTo(bouton.tag, options)"
+          >{{ bouton.text }}</v-btn
+        >
 
         <v-btn
           rounded
@@ -24,14 +28,20 @@
           color="primary"
           class="ml-3 font-weight-bold bouton-header"
           @click="$vuetify.goTo('#contact', options)"
-        >Contact</v-btn>
+          >Contact</v-btn
+        >
       </div>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app class="indigo">
       <v-list>
         <v-list-item v-for="link in links" :key="link.text">
-          <v-btn @click="$vuetify.goTo(link.id, options)" class="white--text" text>{{ link.text }}</v-btn>
+          <v-btn
+            class="white--text"
+            text
+            @click="$vuetify.goTo(link.id, options)"
+            >{{ link.text }}</v-btn
+          >
           <!--
           <v-list-item-icon>
             <v-icon class="white--text">{{ link.icon }}</v-icon>

@@ -2,22 +2,24 @@
   <div class="home">
     <v-layout fill-height align-center>
       <v-container class="app-bar mb-12">
-        <div class="display-1 pt-10" color="#545a72" id="home">Je m'appelle Constantin</div>
-        <div
-          class="black--text display-1 pt-5"
-        >Je suis professeur particulier de la 6ème jusqu'à la Terminale</div>
-        <div
-          class="grey--text text--darken-4 headline pt-5 mb-12"
-        >J'effectue les cours à domicile ou en ligne</div>
+        <div id="home" class="display-1 pt-10" color="#545a72">
+          Je m'appelle Constantin
+        </div>
+        <div class="black--text display-1 pt-5">
+          Je suis professeur particulier de la 6ème jusqu'à la Terminale
+        </div>
+        <div class="grey--text text--darken-4 headline pt-5 mb-12">
+          J'effectue les cours à domicile ou en ligne
+        </div>
         <div align="center" class="display-1">Les matières que j'enseigne</div>
         <v-row class="py-10" justify="center" align="center">
           <v-col
+            v-for="(matiere, i) in matières"
+            :key="i"
             cols="12"
             md="6"
             lg="4"
             xl="3"
-            v-for="(matiere, i) in matières"
-            :key="i"
             class="px-2"
           >
             <v-card max-width="300" color="#ffff">
@@ -26,8 +28,11 @@
               <v-card-title
                 color="#545a72"
                 class="justify-center font-weight-bold card-title"
-              >{{ matiere.title }}</v-card-title>
-              <v-card-text color="#545a72" class>{{ matiere.text }}</v-card-text>
+                >{{ matiere.title }}</v-card-title
+              >
+              <v-card-text color="#545a72" class>{{
+                matiere.text
+              }}</v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -39,7 +44,8 @@
               x-large
               color="primary"
               @click="$vuetify.goTo('#contact', option)"
-            >Contactez moi</v-btn>
+              >Contactez moi</v-btn
+            >
           </div>
         </v-row>
       </v-container>
@@ -47,7 +53,9 @@
 
     <v-container fluid>
       <div class="timeline pt-12">
-        <div align="center" class="pb-12 display-3" id="parcours">Mon parcours professionnel</div>
+        <div id="parcours" align="center" class="pb-12 display-3">
+          Mon parcours professionnel
+        </div>
 
         <v-row justify="center" class="pb-12">
           <v-col cols="10" md="8" lg="10" xl="8">
@@ -56,28 +64,40 @@
         </v-row>
       </div>
       <div id="experience" class="app-bar">
-        <div
-          justify="center"
-          align="center"
-          class="display-3 py-12"
-        >Mon expérience en tant que professeur</div>
+        <div justify="center" align="center" class="display-3 py-12">
+          Mon expérience en tant que professeur
+        </div>
 
         <v-row justify="center" class="pb-12 pt-10">
-          <v-col cols="9" md="12" lg="10" xl="7" v-for="(exp, i) in exps" :key="i">
+          <v-col
+            v-for="(exp, i) in exps"
+            :key="i"
+            cols="9"
+            md="12"
+            lg="10"
+            xl="7"
+          >
             <PExperience :exp="exp" :right="exp.right" />
           </v-col>
         </v-row>
       </div>
 
-      <div class="py-12 timeline" id="avis">
+      <div id="avis" class="py-12 timeline">
         <div justify="center" align="center" class="display-3">Mes avis</div>
 
-        <v-row justify="center" class="mb-12 mt-5" id="avis">
+        <v-row id="avis" justify="center" class="mb-12 mt-5">
           <PostComponent />
         </v-row>
       </div>
       <div>
-        <div id="contact" justify="center" align="center" class="mt-12 display-3">Contact</div>
+        <div
+          id="contact"
+          justify="center"
+          align="center"
+          class="mt-12 display-3"
+        >
+          Contact
+        </div>
 
         <div justify="center" align="center">
           <Contact />
@@ -102,11 +122,6 @@ export default {
     PExperience,
     Contact,
     PostComponent
-  },
-  methods: {
-    logo(name) {
-      return require("../assets/" + name);
-    }
   },
   data() {
     return {
@@ -164,6 +179,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    logo(name) {
+      return require("../assets/" + name);
+    }
   }
 };
 </script>
@@ -181,4 +201,3 @@ export default {
   padding: 0 5%;
 }
 </style>
-

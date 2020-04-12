@@ -1,12 +1,12 @@
 <template>
   <v-app class="grey lighten-5">
-    <p-toolbar  />
+    <PToolbar />
 
-    <v-content >
+    <v-content>
       <router-view />
     </v-content>
 
-    <p-footer />
+    <PFooter />
   </v-app>
 </template>
 
@@ -29,9 +29,6 @@ export default {
 };
 </script>
 <style>
-
-
 .v-application {
 }
-
 </style>
