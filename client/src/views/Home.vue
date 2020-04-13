@@ -1,57 +1,54 @@
 <template>
   <div class="home">
-    <v-layout fill-height align-center>
-      <v-container class="app-bar mb-12">
-        <div id="home" class="display-1 pt-10" color="#545a72">
+    <v-container class="app-bar mb-12">
+      <div id="home" class="py-10">
+        <p class="display-1">
           Je m'appelle Constantin
-        </div>
-        <div class="black--text display-1 pt-5">
-          Je suis professeur particulier de la 6ème jusqu'à la Terminale
-        </div>
-        <div class="grey--text text--darken-4 headline pt-5 mb-12">
-          J'effectue les cours à domicile ou en ligne
-        </div>
-        <div align="center" class="display-1 pt-12">
-          Les matières que j'enseigne
-        </div>
-        <v-row class="py-10" justify="center" align="center">
-          <v-col
-            v-for="(matiere, i) in matières"
-            :key="i"
-            cols="12"
-            md="6"
-            lg="4"
-            xl="3"
-            class="px-2"
+          <br />Je suis professeur particulier de la 6ème jusqu'à la Terminale
+          <br />
+          <span class="headline"
+            >J'effectue les cours à domicile ou en ligne</span
           >
-            <v-card max-width="300" color="#ffff">
-              <!--
-              <v-img :src="logo(matiere.img)" height="100"></v-img>-->
-              <v-card-title
-                color="#545a72"
-                class="justify-center font-weight-bold card-title"
-                >{{ matiere.title }}</v-card-title
-              >
-              <v-card-text color="#545a72" class>
-                {{ matiere.text }}
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row justify="center" align="center">
-          <div class="my-2 pt-10">
-            <v-btn
-              class="font-weight-bold bouton-header"
-              rounded
-              x-large
-              color="primary"
-              @click="$vuetify.goTo('#contact', option)"
-              >Contactez moi</v-btn
+        </p>
+      </div>
+      <div align="center" class="info-title">Les matières que j'enseigne</div>
+      <v-row class="py-10" justify="center" align="center">
+        <v-col
+          v-for="(matiere, i) in matières"
+          :key="i"
+          cols="8"
+          md="6"
+          lg="4"
+          xl="3"
+          class="px-3"
+        >
+          <v-card color="#ffff" elevation="5">
+            <v-img :src="logo(matiere.img)" contain max-height="200px"></v-img>
+            <v-card-title
+              color="#545a72"
+              class="justify-center font-weight-bold headline"
+              >{{ matiere.title }}</v-card-title
             >
-          </div>
-        </v-row>
-      </v-container>
-    </v-layout>
+            <v-card-text
+              color="#545a72"
+              class="font-weight-medium title texte"
+              >{{ matiere.text }}</v-card-text
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+
+      <div class="my-2 pt-10" justify="center" align="center">
+        <v-btn
+          class="font-weight-bold bouton-header"
+          rounded
+          x-large
+          color="primary"
+          @click="$vuetify.goTo('#contact', option)"
+          >Contactez moi</v-btn
+        >
+      </div>
+    </v-container>
 
     <v-container fluid>
       <div class="timeline pt-12">
@@ -141,7 +138,7 @@ export default {
 
         {
           title: "Physique / Chimie",
-          text: "Des applications concretes de la physique",
+          text: "Des applications concrètes de la physique",
           img: "physics.png"
         },
         {
