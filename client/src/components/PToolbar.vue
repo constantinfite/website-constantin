@@ -1,16 +1,11 @@
 <template>
   <nav>
-    <v-app-bar color="transparent" elevation="2" height="100" class="app-bar">
-      <v-app-bar-nav-icon
-        class="d-md-none ml-8"
-        @click="drawer = !drawer"
-      ></v-app-bar-nav-icon>
-
+    <v-app-bar color="transparent" height="100" class="app-bar">
       <v-toolbar-title class="text-uppercase grey--text ml-8">
         <span class="font-weight-light black--text">Constantin</span>
         <span class="black--text">F.</span>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <div class="d-none d-md-block">
         <v-btn
           v-for="(bouton, i) in boutons"
@@ -31,15 +26,16 @@
           >Contact</v-btn
         >
       </div>
+      <v-app-bar-nav-icon class="d-md-none ml-8" @click="drawer = !drawer" />
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app class="indigo">
+    <v-navigation-drawer v-model="drawer" app class="indigo" right>
       <v-list>
         <v-list-item v-for="link in links" :key="link.text">
           <v-btn
             class="white--text"
             text
-            @click="$vuetify.goTo(link.id, options)"
+            @click="navigationPop(link.id, $vuetify)"
             >{{ link.text }}</v-btn
           >
           <!--
@@ -61,7 +57,7 @@ export default {
     return {
       drawer: false,
       options: {
-        duration: 300,
+        duration: 500,
         offset: 0,
         easing: "easeInOutCubic"
       },
@@ -86,20 +82,17 @@ export default {
         { icon: "mdi-account-box", text: "Contactez moi", id: "#contact" }
       ]
     };
+  },
+  methods: {
+    navigationPop(id, vuetify) {
+      vuetify.goTo(id, this.options), (this.drawer = !this.drawer);
+    }
   }
 };
 </script>
 
 <style>
-.v-toolbar__content {
-  padding: 0px !important;
-}
-
 .app-bar {
   padding: 0 20%;
-}
-
-.bouton-header {
-  font-family: "Comfortaa", cursive;
 }
 </style>

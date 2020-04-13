@@ -1,28 +1,49 @@
 <template>
-  <v-timeline>
-    <v-timeline-item
-      v-for="(career, i) in careers"
-      :key="i"
-      :color="career.color"
-      small="true"
-    >
-      <span slot="opposite" class="align-self-center">
-        <div class="title">{{ career.date }}</div>
-      </span>
+  <div>
+    <v-timeline class="d-none d-md-block">
+      <v-timeline-item
+        v-for="(career, i) in careers"
+        :key="i"
+        :color="career.color"
+        small="true"
+      >
+        <span slot="opposite" class="align-self-center">
+          <div class="title">{{ career.date }}</div>
+        </span>
 
-      <v-card>
-        <v-card-title class="card-title font-weight-bold headline">{{
-          career.title
-        }}</v-card-title>
-        <v-card-subtitle class="font-weight-bold subtitle-1">{{
-          career.lieu
-        }}</v-card-subtitle>
-        <v-card-text class="font-weight-bold title">{{
-          career.text
-        }}</v-card-text>
-      </v-card>
-    </v-timeline-item>
-  </v-timeline>
+        <v-card>
+          <v-card-title class="card-title font-weight-bold headline">{{
+            career.title
+          }}</v-card-title>
+          <v-card-subtitle class="font-weight-bold subtitle-1">{{
+            career.lieu
+          }}</v-card-subtitle>
+          <v-card-text class="font-weight-bold title">{{
+            career.text
+          }}</v-card-text>
+        </v-card>
+      </v-timeline-item>
+    </v-timeline>
+    <v-timeline dense class="d-md-none">
+      <v-timeline-item
+        v-for="(career, i) in careers"
+        :key="i"
+        :color="career.color"
+        small="true"
+      >
+        <v-card>
+          <v-card-title class="card-title font-weight-bold headline">{{
+            career.title
+          }}</v-card-title>
+          <v-card-subtitle class="title">{{ career.date }}</v-card-subtitle>
+          <v-card-subtitle class="title">{{ career.lieu }}</v-card-subtitle>
+          <v-card-text class="font-weight-bold title">{{
+            career.text
+          }}</v-card-text>
+        </v-card>
+      </v-timeline-item>
+    </v-timeline>
+  </div>
 </template>
 
 <script>

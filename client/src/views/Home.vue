@@ -11,7 +11,9 @@
         <div class="grey--text text--darken-4 headline pt-5 mb-12">
           J'effectue les cours à domicile ou en ligne
         </div>
-        <div align="center" class="display-1">Les matières que j'enseigne</div>
+        <div align="center" class="display-1 pt-12">
+          Les matières que j'enseigne
+        </div>
         <v-row class="py-10" justify="center" align="center">
           <v-col
             v-for="(matiere, i) in matières"
@@ -30,9 +32,9 @@
                 class="justify-center font-weight-bold card-title"
                 >{{ matiere.title }}</v-card-title
               >
-              <v-card-text color="#545a72" class>{{
-                matiere.text
-              }}</v-card-text>
+              <v-card-text color="#545a72" class>
+                {{ matiere.text }}
+              </v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -75,7 +77,7 @@
             cols="9"
             md="12"
             lg="10"
-            xl="7"
+            xl="9"
           >
             <PExperience :exp="exp" :right="exp.right" />
           </v-col>
@@ -138,7 +140,7 @@ export default {
         },
 
         {
-          title: "Physiques / Chimies",
+          title: "Physique / Chimie",
           text: "Des applications concretes de la physique",
           img: "physics.png"
         },
