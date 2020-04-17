@@ -14,7 +14,7 @@
       </v-card>
     </v-col>
 
-    <v-col cols="11" md="5" lg="5" xl="5" justify="center">
+    <v-col cols="11" md="5" lg="5" xl="5" justify="center" align="center">
       <v-img
         :src="logo(exp.img)"
         max-width="400px"
@@ -49,5 +49,20 @@ export default {
 <style>
 .card {
   background-color: darkblue;
+}
+
+.slide-fade-enter {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 2s ease;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(-30px);
+  opacity: 0;
 }
 </style>

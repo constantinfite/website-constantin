@@ -4,7 +4,7 @@
       <div id="home" class="py-10">
         <p class="display-1">
           Je m'appelle Constantin
-          <br />Je suis professeur particulier de la 6ème jusqu'à la Terminale
+          <br />Je donne des cours particulier de la 6ème jusqu'à la Terminale
           <br />
           <span class="headline"
             >J'effectue les cours à domicile ou en ligne</span
@@ -51,23 +51,26 @@
     </v-container>
 
     <v-container fluid>
-      <div class="timeline pt-12">
-        <div id="parcours" align="center" class="pb-12 display-3">
-          Mon parcours professionnel
-        </div>
+      <div id="parcours">
+        <div class="timeline pt-12">
+          <div align="center" class="pb-12 display-3">
+            Mon parcours professionnel
+          </div>
 
-        <v-row justify="center" class="pb-12">
-          <v-col cols="10" md="8" lg="10" xl="8">
-            <Timeline class />
-          </v-col>
-        </v-row>
+          <v-row justify="center" class="pb-12">
+            <v-col cols="10" md="8" lg="10" xl="8">
+              <Timeline class />
+            </v-col>
+          </v-row>
+        </div>
       </div>
+
       <div id="experience" class="app-bar">
         <div justify="center" align="center" class="display-3 py-12">
-          Mon expérience en tant que professeur
+          Mon expérience
         </div>
 
-        <v-row justify="center" class="pb-12 pt-10">
+        <v-row justify="center" class="pb-12 pt-5">
           <v-col
             v-for="(exp, i) in exps"
             :key="i"
@@ -76,18 +79,18 @@
             lg="10"
             xl="9"
           >
-            <PExperience :exp="exp" :right="exp.right" />
+            <PExperience :exp="exp" />
           </v-col>
         </v-row>
       </div>
 
       <div id="avis" class="py-12 timeline">
         <div justify="center" align="center" class="display-3">Mes avis</div>
-
         <v-row id="avis" justify="center" class="mb-12 mt-5">
           <PostComponent />
         </v-row>
       </div>
+
       <div>
         <div
           id="contact"
@@ -97,7 +100,6 @@
         >
           Contact
         </div>
-
         <div justify="center" align="center">
           <Contact />
         </div>
@@ -107,8 +109,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-//import HelloWorld from "@/components/HelloWorld.vue";
 import Timeline from "@/components/Timeline.vue";
 import PExperience from "@/components/PExperience.vue";
 import Contact from "@/components/Contact.vue";
@@ -124,6 +124,8 @@ export default {
   },
   data() {
     return {
+      showParcours: false,
+      showTop: false,
       options: {
         duration: 300,
         offset: 0,
@@ -153,28 +155,32 @@ export default {
           img: "photo_moi.jpg",
           date: "2019 - Maintenant",
           text:
-            "Depuis 1 an et demi j'effectue des cours particuliers à domicile "
+            "Depuis 1 an et demi j'ai effectué des cours particuliers à domicile et en ligne à une dizaine d'élèves. Grâce à tous ces cours effectués j'ai appris à me mettre à la place de l'élève et à comprendre la source du problème.",
+          show: false
         },
         {
-          title: "Professeur au sein d'Acadomia et Complétude",
+          title: "Professeur au sein d'Acadomia et Complétude.",
           img: "acadomia.png",
           date: "2018 - 2019",
           text:
-            "J'ai été professeur avec Acadomia, j'ai enseigné à  des 5 élèves de la 3ème à la Terminal"
+            "J'ai été professeur avec Acadomia, j'ai enseigné à  des 5 élèves de la 3ème à la Terminal.",
+          show: true
         },
         {
           title: "Professeur d'anglais et de mathématiques",
           img: "photo_enfant.jpeg",
           date: "6 semaines à Bali lors d'un stage",
           text:
-            "J'ai eu la chance de faire mon stage d'engagement citoyen à Bali. J'ai enseigné l'enseigné l'anglais et les mathématiques à des élèves de 13 à 14 ans"
+            "J'ai eu la chance de faire mon stage d'engagement citoyen à Bali. J'ai enseigné l'enseigné l'anglais et les mathématiques à des élèves de 13 à 14 ans.",
+          show: true
         },
         {
           title: "Tuteur dans mon école d'ingénieur EPF",
           img: "logo_epf_0.png",
           date: "2017 - 2018",
           text:
-            "J'ai été tuteur dans mon école d'ingénieur auprès des 1ères années. J'ai enseigné la physique niveau Bac +1  "
+            "J'ai été tuteur dans mon école d'ingénieur auprès des 1ères années. J'ai enseigné la physique à un niveau Bac +1  ",
+          show: false
         }
       ]
     };
@@ -183,6 +189,11 @@ export default {
     logo(name) {
       return require("../assets/" + name);
     }
+
+    /*onIntersectExp(entries) {
+      console.log(entries);
+      this.showParcours = entries[0].isIntersecting;
+    }*/
   }
 };
 </script>
@@ -198,5 +209,33 @@ export default {
 
 .app-bar {
   padding: 0 5%;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease-out;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 2s ease;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(-30px);
+  opacity: 0;
 }
 </style>

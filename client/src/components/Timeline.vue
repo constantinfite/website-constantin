@@ -5,7 +5,7 @@
         v-for="(career, i) in careers"
         :key="i"
         :color="career.color"
-        small="true"
+        small
       >
         <span slot="opposite" class="align-self-center">
           <div class="title">{{ career.date }}</div>
@@ -29,7 +29,7 @@
         v-for="(career, i) in careers"
         :key="i"
         :color="career.color"
-        small="true"
+        small
       >
         <v-card>
           <v-card-title class="card-title font-weight-bold headline">{{
@@ -56,7 +56,7 @@ export default {
           title: " Ecole d'ingénieur ",
           date: "2016 - 2021",
           text:
-            "J’ai enseigné les mathématiques et l'anglais à des élèves à Bali",
+            "Depuis 4 ans je suis étudiant en école d'ingénieur. J'ai eu une formation très généraliste pendant 3 ans et cette année je me suis spécialisé dans une filière plus informatique orientée data.",
           color: "blue lighten-1"
         },
         {
@@ -64,7 +64,7 @@ export default {
           title: "CPGE MPSI",
           date: "2015 - 2016",
           text:
-            "Cette année en classe préparatoire m'a permis d'apprendre une bonne rigueur de travail et u",
+            "Cette année en classe préparatoire m'a permis de prendre du recul sur les mathématiques.",
           color: "blue lighten-1"
         },
         {
