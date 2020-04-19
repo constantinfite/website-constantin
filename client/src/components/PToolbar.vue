@@ -1,11 +1,15 @@
 <template>
   <nav>
     <v-app-bar color="#fff" elevation="1" height="80" app class="app-bar">
-      <v-toolbar-title>
-        <span class="font-weight-medium black--text headline"
-          >Constantin Cours Particulier</span
-        >
-      </v-toolbar-title>
+      <v-btn
+        color="primary"
+        text
+        large
+        class="font-weight-bold bouton-header logo"
+        @click="$vuetify.goTo('#home', options)"
+        >Cours Particuliers Constantin</v-btn
+      >
+
       <v-spacer />
       <div class="d-none d-md-block">
         <v-btn
@@ -95,5 +99,8 @@ export default {
 <style>
 .app-bar {
   padding: 0 10% !important;
+}
+.logo{
+  font-size: 30px;
 }
 </style>

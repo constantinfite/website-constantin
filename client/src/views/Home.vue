@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-container fluid class="mb-12 main">
-      <div id="home" class="py-10" text-align-left>
+      <div id="home" class="py-10 ">
         <p class="display-1">
           Je m'appelle Constantin
-          <br />Je donne des cours particulier de la 6ème jusqu'à la Terminale
+          <br />Je donne des cours particuliers de la 6ème jusqu'à la Terminale
           <br />
           <span class="headline"
             >J'effectue les cours à domicile ou en ligne</span
@@ -22,7 +22,7 @@
           xl="3"
           class="px-3"
         >
-          <v-card color="#ffff" elevation="5">
+          <v-card color="#ffff" elevation="3">
             <v-img :src="logo(matiere.img)" contain max-height="130px"></v-img>
             <v-card-title
               color="#545a72"
@@ -71,7 +71,7 @@
           Mon expérience
         </div>
 
-        <v-row  justify="center" class="pb-12 pt-5">
+        <v-row justify="center" class="pb-12 pt-5">
           <v-col
             v-for="(exp, i) in exps"
             :key="i"
@@ -132,18 +132,18 @@ export default {
           title: "Mathématiques",
           text:
             "Mieux comprendre grâce à des outils de visualisation (Géogébra)",
-          img: "maths.png"
+          img: "calculus.png"
         },
 
         {
           title: "Physique / Chimie",
           text: "Des applications concrètes de la physique",
-          img: "physics.png"
+          img: "atom.png"
         },
         {
           title: "Programmation",
           text: "Apprendre les bases de la programmation en Python",
-          img: "programmation.png"
+          img: "python.png"
         }
       ],
       exps: [
