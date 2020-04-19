@@ -12,15 +12,15 @@
         </span>
 
         <v-card>
-          <v-card-title class="card-title font-weight-bold headline">{{
-            career.title
-          }}</v-card-title>
-          <v-card-subtitle class="font-weight-bold subtitle-1">{{
-            career.lieu
-          }}</v-card-subtitle>
-          <v-card-text class="font-weight-bold title">{{
-            career.text
-          }}</v-card-text>
+          <v-card-title class="card-title font-weight-bold headline">
+            {{ career.title }}
+          </v-card-title>
+          <v-card-subtitle class="font-weight-bold subtitle-1">
+            {{ career.lieu }}
+          </v-card-subtitle>
+          <v-card-text class="font-weight-bold title">
+            {{ career.text }}
+          </v-card-text>
         </v-card>
       </v-timeline-item>
     </v-timeline>
@@ -32,14 +32,14 @@
         small
       >
         <v-card>
-          <v-card-title class="card-title font-weight-bold headline">{{
-            career.title
-          }}</v-card-title>
+          <v-card-title class="card-title font-weight-bold headline">
+            {{ career.title }}
+          </v-card-title>
           <v-card-subtitle class="title">{{ career.date }}</v-card-subtitle>
           <v-card-subtitle class="title">{{ career.lieu }}</v-card-subtitle>
-          <v-card-text class="font-weight-bold title">{{
-            career.text
-          }}</v-card-text>
+          <v-card-text class="font-weight-bold title">
+            {{ career.text }}
+          </v-card-text>
         </v-card>
       </v-timeline-item>
     </v-timeline>
@@ -64,7 +64,7 @@ export default {
           title: "CPGE MPSI",
           date: "2015 - 2016",
           text:
-            "Cette année en classe préparatoire m'a permis de prendre du recul sur les mathématiques.",
+            "Cette année en classe préparatoire m'a appris d'avoir une meileur vision globale des mathématiques. Je réutilise des techniques vues en classe préparatoire pour débloquer des élève.",
           color: "blue lighten-1"
         },
         {

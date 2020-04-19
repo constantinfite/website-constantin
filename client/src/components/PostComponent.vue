@@ -74,7 +74,7 @@
                     name="input-7-1"
                     label="Votre avis*"
                     placeholder="..."
-                    hint=""
+                    hint
                     :rules="avisRules"
                     class="mb-5"
                   />
@@ -137,6 +137,7 @@ export default {
   },
   methods: {
     async createPost() {
+      this.formValidity = false;
       this.$refs.SignUpForm.validate();
       await PostService.insertPost(this.info);
       this.posts = await PostService.getPosts();

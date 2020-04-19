@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <v-container class="app-bar mb-12">
-      <div id="home" class="py-10">
+  <div>
+    <v-container fluid class="mb-12 main">
+      <div id="home" class="py-10" text-align-left>
         <p class="display-1">
           Je m'appelle Constantin
           <br />Je donne des cours particulier de la 6ème jusqu'à la Terminale
@@ -17,16 +17,16 @@
           v-for="(matiere, i) in matières"
           :key="i"
           cols="8"
-          md="6"
+          md="5"
           lg="4"
           xl="3"
           class="px-3"
         >
           <v-card color="#ffff" elevation="5">
-            <v-img :src="logo(matiere.img)" contain max-height="200px"></v-img>
+            <v-img :src="logo(matiere.img)" contain max-height="130px"></v-img>
             <v-card-title
               color="#545a72"
-              class="justify-center font-weight-bold headline"
+              class="justify-center font-weight-bold headline card-title"
               >{{ matiere.title }}</v-card-title
             >
             <v-card-text
@@ -50,8 +50,8 @@
       </div>
     </v-container>
 
-    <v-container fluid>
-      <div id="parcours">
+    <v-container fluid class="timeline">
+      <div id="parcours" class="main">
         <div class="timeline pt-12">
           <div align="center" class="pb-12 display-3">
             Mon parcours professionnel
@@ -64,45 +64,41 @@
           </v-row>
         </div>
       </div>
-
-      <div id="experience" class="app-bar">
+    </v-container>
+    <v-container fluid class="main">
+      <div id="experience">
         <div justify="center" align="center" class="display-3 py-12">
           Mon expérience
         </div>
 
-        <v-row justify="center" class="pb-12 pt-5">
+        <v-row  justify="center" class="pb-12 pt-5">
           <v-col
             v-for="(exp, i) in exps"
             :key="i"
             cols="9"
             md="12"
-            lg="10"
-            xl="9"
+            lg="12"
+            xl="12"
           >
             <PExperience :exp="exp" />
           </v-col>
         </v-row>
       </div>
-
-      <div id="avis" class="py-12 timeline">
+    </v-container>
+    <v-container fluid class="timeline">
+      <div id="avis" class="py-12 main">
         <div justify="center" align="center" class="display-3">Mes avis</div>
         <v-row id="avis" justify="center" class="mb-12 mt-5">
           <PostComponent />
         </v-row>
       </div>
-
-      <div>
-        <div
-          id="contact"
-          justify="center"
-          align="center"
-          class="mt-12 display-3"
-        >
-          Contact
-        </div>
-        <div justify="center" align="center">
-          <Contact />
-        </div>
+    </v-container>
+    <v-container fluid class="main">
+      <div id="contact" justify="center" align="center" class="mt-12 display-3">
+        Contact
+      </div>
+      <div justify="center" align="center">
+        <Contact />
       </div>
     </v-container>
   </div>
@@ -134,7 +130,8 @@ export default {
       matières: [
         {
           title: "Mathématiques",
-          text: "Une vision différente avec Géogébra",
+          text:
+            "Mieux comprendre grâce à des outils de visualisation (Géogébra)",
           img: "maths.png"
         },
 
@@ -163,7 +160,7 @@ export default {
           img: "acadomia.png",
           date: "2018 - 2019",
           text:
-            "J'ai été professeur avec Acadomia, j'ai enseigné à  des 5 élèves de la 3ème à la Terminal.",
+            "J'ai été professeur avec Acadomia, j'ai enseigné à 5 élèves de la 3ème à la Terminale.",
           show: true
         },
         {
@@ -207,10 +204,6 @@ export default {
   text-align: center;
 }
 
-.app-bar {
-  padding: 0 5%;
-}
-
 .fade-enter {
   opacity: 0;
 }
@@ -237,5 +230,11 @@ export default {
 .slide-fade-leave-to {
   transform: translateX(-30px);
   opacity: 0;
+}
+
+.main {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="11" md="5" lg="5" xl="5">
+    <v-col cols="12" md="6" lg="6" xl="6">
       <v-card flat color="transparent" class="card">
         <v-card-title class="card-title font-weight-bold headline">{{
           exp.title
@@ -14,7 +14,7 @@
       </v-card>
     </v-col>
 
-    <v-col cols="11" md="5" lg="5" xl="5" justify="center" align="center">
+    <v-col cols="12" md="6" lg="6" xl="6" justify="center" align="center">
       <v-img
         :src="logo(exp.img)"
         max-width="400px"

@@ -1,9 +1,10 @@
 <template>
   <nav>
-    <v-app-bar color="transparent" elevation="1" height="100" class="app-bar">
-      <v-toolbar-title class="text-uppercase grey--text ml-8">
-        <span class="font-weight-light black--text">Constantin</span>
-        <span class="black--text"> F.</span>
+    <v-app-bar color="#fff" elevation="1" height="80" app class="app-bar">
+      <v-toolbar-title>
+        <span class="font-weight-medium black--text headline"
+          >Constantin Cours Particulier</span
+        >
       </v-toolbar-title>
       <v-spacer />
       <div class="d-none d-md-block">
@@ -93,6 +94,6 @@ export default {
 
 <style>
 .app-bar {
-  padding: 0 10%;
+  padding: 0 10% !important;
 }
 </style>
