@@ -1,13 +1,21 @@
 <template>
   <div>
-    <v-col cols="12" md="12" lg="12">
+    <v-col
+      cols="12"
+      md="12"
+      lg="12"
+    >
       <v-col
         v-for="(post, index) in posts"
         :key="post._id"
         :item="post"
         :index="index"
       >
-        <v-card width="300px" outlined class="my-2">
+        <v-card
+          width="300px"
+          outlined
+          class="my-2"
+        >
           <v-card-title class="black--text font-weight-medium">{{
             post.prenom
           }}</v-card-title>
@@ -34,11 +42,14 @@
         color="primary"
         rounded
         @click="dialog = true"
-        >Ecrire un avis</v-btn
-      >
+      >Ecrire un avis</v-btn>
     </v-row>
 
-    <v-dialog v-model="dialog" persistent max-width="600px">
+    <v-dialog
+      v-model="dialog"
+      persistent
+      max-width="600px"
+    >
       <v-card>
         <v-card-title>
           <span class="headline">Ecrire un avis</span>
@@ -46,8 +57,15 @@
         <v-card-text>
           <v-container>
             <v-row>
-              <v-col cols="12" sm="12" md="12">
-                <v-form ref="SignUpForm" v-model="formValidity">
+              <v-col
+                cols="12"
+                sm="12"
+                md="12"
+              >
+                <v-form
+                  ref="SignUpForm"
+                  v-model="formValidity"
+                >
                   <v-text-field
                     v-model="info.nom"
                     :rules="nomRules"
@@ -79,15 +97,16 @@
                     class="mb-5"
                   />
 
-                  <v-btn class="mr-5" color="error" @click="closeForm"
-                    >Fermer</v-btn
-                  >
+                  <v-btn
+                    class="mr-5"
+                    color="error"
+                    @click="closeForm"
+                  >Fermer</v-btn>
                   <v-btn
                     color="success"
                     @click="createPost"
                     :disabled="!formValidity"
-                    >Envoyer</v-btn
-                  >
+                  >Envoyer</v-btn>
                 </v-form>
               </v-col>
             </v-row>
@@ -105,7 +124,7 @@
 import PostService from "../PostService";
 export default {
   name: "PostComponent",
-  data() {
+  data () {
     return {
       posts: [],
       error: "",
@@ -128,7 +147,7 @@ export default {
       info: { texte: "", prenom: "", email: "", nom: "" }
     };
   },
-  async created() {
+  async created () {
     try {
       this.posts = await PostService.getPosts();
     } catch (err) {
@@ -136,7 +155,7 @@ export default {
     }
   },
   methods: {
-    async createPost() {
+    async createPost () {
       this.formValidity = false;
       this.$refs.SignUpForm.validate();
       await PostService.insertPost(this.info);
@@ -144,11 +163,11 @@ export default {
       this.dialog = false;
       this.$refs.SignUpForm.reset();
     },
-    async deletePost(id) {
+    async deletePost (id) {
       await PostService.deletePost(id);
       this.posts = await PostService.getPosts();
     },
-    closeForm() {
+    closeForm () {
       this.dialog = false;
       this.$refs.SignUpForm.resetValidation();
     }

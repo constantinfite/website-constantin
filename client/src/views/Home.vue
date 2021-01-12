@@ -1,18 +1,29 @@
 <template>
   <div>
-    <v-container fluid class="mb-12 main">
-      <div id="home" class="py-10 ">
+    <v-container
+      fluid
+      class="mb-12 main"
+    >
+      <div
+        id="home"
+        class="py-10"
+      >
         <p class="display-1">
           Je m'appelle Constantin
           <br />Je donne des cours particuliers de la 6ème jusqu'à la Terminale
           <br />
-          <span class="headline"
-            >J'effectue les cours à domicile ou en ligne</span
-          >
+          <span class="headline">J'effectue les cours à domicile ou en ligne</span>
         </p>
       </div>
-      <div align="center" class="info-title">Les matières que j'enseigne</div>
-      <v-row class="py-10" justify="center" align="center">
+      <div
+        align="center"
+        class="info-title"
+      >Les matières que j'enseigne</div>
+      <v-row
+        class="py-10"
+        justify="center"
+        align="center"
+      >
         <v-col
           v-for="(matiere, i) in matières"
           :key="i"
@@ -22,56 +33,97 @@
           xl="3"
           class="px-3"
         >
-          <v-card color="#ffff" elevation="3">
-            <v-img :src="logo(matiere.img)" contain max-height="130px"></v-img>
+          <v-card
+            color="#ffff"
+            elevation="3"
+          >
+            <v-img
+              :src="logo(matiere.img)"
+              contain
+              max-height="130px"
+            />
             <v-card-title
               color="#545a72"
               class="justify-center font-weight-bold headline card-title"
-              >{{ matiere.title }}</v-card-title
             >
+              {{ matiere.title }}
+            </v-card-title>
             <v-card-text
               color="#545a72"
               class="font-weight-medium title texte"
-              >{{ matiere.text }}</v-card-text
             >
+              {{ matiere.text }}
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
 
-      <div class="my-2 pt-10" justify="center" align="center">
+      <div
+        class="my-2 pt-10"
+        justify="center"
+        align="center"
+      >
         <v-btn
           class="font-weight-bold bouton-header"
           rounded
           x-large
           color="primary"
           @click="$vuetify.goTo('#contact', option)"
-          >Contactez moi</v-btn
         >
+          Contactez moi
+        </v-btn>
       </div>
     </v-container>
 
-    <v-container fluid class="timeline">
-      <div id="parcours" class="main">
+    <v-container
+      fluid
+      class="timeline"
+    >
+      <div
+        id="parcours"
+        class="main"
+      >
         <div class="timeline pt-12">
-          <div align="center" class="pb-12 display-3">
+          <div
+            align="center"
+            class="pb-12 display-3"
+          >
             Mon parcours professionnel
           </div>
 
-          <v-row justify="center" class="pb-12">
-            <v-col cols="10" md="8" lg="10" xl="8">
+          <v-row
+            justify="center"
+            class="pb-12"
+          >
+            <v-col
+              cols="10"
+              md="8"
+              lg="10"
+              xl="8"
+            >
               <Timeline class />
             </v-col>
           </v-row>
         </div>
       </div>
     </v-container>
-    <v-container fluid class="main">
+    <v-container
+      fluid
+      class="main"
+    >
       <div id="experience">
-        <div justify="center" align="center" class="display-3 py-12">
+        <div
+          justify="center"
+          align="center"
+          class="display-3 py-12"
+        >
           Mon expérience
         </div>
 
-        <v-row justify="center" class="pb-12 pt-5">
+        <v-row
+          justify="center"
+          class="pb-12 pt-5"
+        >
           <v-col
             v-for="(exp, i) in exps"
             :key="i"
@@ -85,19 +137,44 @@
         </v-row>
       </div>
     </v-container>
-    <v-container fluid class="timeline">
-      <div id="avis" class="py-12 main">
-        <div justify="center" align="center" class="display-3">Mes avis</div>
-        <v-row id="avis" justify="center" class="mb-12 mt-5">
+    <v-container
+      fluid
+      class="timeline"
+    >
+      <div
+        id="avis"
+        class="py-12 main"
+      >
+        <div
+          justify="center"
+          align="center"
+          class="display-3"
+        >Mes avis</div>
+        <v-row
+          id="avis"
+          justify="center"
+          class="mb-12 mt-5"
+        >
           <PostComponent />
         </v-row>
       </div>
     </v-container>
-    <v-container fluid class="main">
-      <div id="contact" justify="center" align="center" class="mt-12 display-3">
+    <v-container
+      fluid
+      class="main"
+    >
+      <div
+        id="contact"
+        justify="center"
+        align="center"
+        class="mt-12 display-3"
+      >
         Contact
       </div>
-      <div justify="center" align="center">
+      <div
+        justify="center"
+        align="center"
+      >
         <Contact />
       </div>
     </v-container>
@@ -105,67 +182,67 @@
 </template>
 
 <script>
-import Timeline from "@/components/Timeline.vue";
-import PExperience from "@/components/PExperience.vue";
-import Contact from "@/components/Contact.vue";
-import PostComponent from "@/components/PostComponent";
+import Timeline from '@/components/Timeline.vue'
+import PExperience from '@/components/PExperience.vue'
+import Contact from '@/components/Contact.vue'
+import PostComponent from '@/components/PostComponent'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Timeline,
     PExperience,
     Contact,
     PostComponent
   },
-  data() {
+  data () {
     return {
       showParcours: false,
       showTop: false,
       options: {
         duration: 300,
         offset: 0,
-        easing: "easeInOutCubic"
+        easing: 'easeInOutCubic'
       },
       matières: [
         {
-          title: "Mathématiques",
+          title: 'Mathématiques',
           text:
-            "Mieux comprendre grâce à des outils de visualisation (Géogébra)",
-          img: "calculus.png"
+            'Mieux comprendre grâce à des outils de visualisation (Géogébra)',
+          img: 'calculus.png'
         },
 
         {
-          title: "Physique / Chimie",
-          text: "Des applications concrètes de la physique",
-          img: "atom.png"
+          title: 'Physique / Chimie',
+          text: 'Des applications concrètes de la physique',
+          img: 'atom.png'
         },
         {
-          title: "Programmation",
-          text: "Apprendre les bases de la programmation en Python",
-          img: "python.png"
+          title: 'Programmation',
+          text: 'Apprendre les bases de la programmation en Python',
+          img: 'python.png'
         }
       ],
       exps: [
         {
-          title: "Professeur particulier à domicile et en ligne",
-          img: "photo_moi.jpg",
-          date: "2019 - Maintenant",
+          title: 'Professeur particulier à domicile et en ligne',
+          img: 'photo_moi.jpg',
+          date: '2019 - Maintenant',
           text:
             "Depuis 1 an et demi j'ai effectué des cours particuliers à domicile et en ligne à une dizaine d'élèves. Grâce à tous ces cours effectués j'ai appris à me mettre à la place de l'élève et à comprendre la source du problème.",
           show: false
         },
         {
           title: "Professeur au sein d'Acadomia et Complétude.",
-          img: "acadomia.png",
-          date: "2018 - 2019",
+          img: 'acadomia.png',
+          date: '2018 - 2019',
           text:
             "J'ai été professeur avec Acadomia, j'ai enseigné à 5 élèves de la 3ème à la Terminale.",
           show: true
         },
         {
           title: "Professeur d'anglais et de mathématiques",
-          img: "photo_enfant.jpeg",
+          img: 'photo_enfant.jpeg',
           date: "6 semaines à Bali lors d'un stage",
           text:
             "J'ai eu la chance de faire mon stage d'engagement citoyen à Bali. J'ai enseigné l'enseigné l'anglais et les mathématiques à des élèves de 13 à 14 ans.",
@@ -173,18 +250,18 @@ export default {
         },
         {
           title: "Tuteur dans mon école d'ingénieur EPF",
-          img: "logo_epf_0.png",
-          date: "2017 - 2018",
+          img: 'logo_epf_0.png',
+          date: '2017 - 2018',
           text:
             "J'ai été tuteur dans mon école d'ingénieur auprès des 1ères années. J'ai enseigné la physique à un niveau Bac +1  ",
           show: false
         }
       ]
-    };
+    }
   },
   methods: {
-    logo(name) {
-      return require("../assets/" + name);
+    logo (name) {
+      return require('../assets/' + name)
     }
 
     /*onIntersectExp(entries) {
@@ -192,7 +269,7 @@ export default {
       this.showParcours = entries[0].isIntersecting;
     }*/
   }
-};
+}
 </script>
 
 <style>

@@ -7,7 +7,10 @@
         :color="career.color"
         small
       >
-        <span slot="opposite" class="align-self-center">
+        <span
+          slot="opposite"
+          class="align-self-center"
+        >
           <div class="title">{{ career.date }}</div>
         </span>
 
@@ -24,7 +27,10 @@
         </v-card>
       </v-timeline-item>
     </v-timeline>
-    <v-timeline dense class="d-md-none">
+    <v-timeline
+      dense
+      class="d-md-none"
+    >
       <v-timeline-item
         v-for="(career, i) in careers"
         :key="i"
@@ -48,7 +54,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       careers: [
         {

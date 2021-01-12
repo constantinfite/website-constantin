@@ -1,6 +1,13 @@
 <template>
-  <v-footer app absolute class="font-weight-medium">
-    <v-col class="text-center" cols="12">
+  <v-footer
+    app
+    absolute
+    class="font-weight-medium"
+  >
+    <v-col
+      class="text-center"
+      cols="12"
+    >
       {{ new Date().getFullYear() }} —
       <strong>ma’o Copyright</strong>
     </v-col>
@@ -8,7 +15,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style></style>
