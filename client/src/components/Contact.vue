@@ -11,7 +11,8 @@
     >
       <v-icon
         large
-        class="darken-4--text pr-2"
+        class=" pr-2"
+        color="grey darken-4"
       >mdi-email</v-icon>
       <a
         href="mailto:constantin.fite@gmail.com"
@@ -19,7 +20,8 @@
       >constantin.fite@gmail.com</a>
       <v-icon
         large
-        class="darken-4--text pr-2"
+        class="darken pr-2"
+        color="grey darken-4"
       >mdi-phone</v-icon>
       <a
         class="headline"

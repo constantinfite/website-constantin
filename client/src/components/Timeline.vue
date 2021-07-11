@@ -62,7 +62,7 @@ export default {
           title: " Ecole d'ingénieur ",
           date: "2016 - 2021",
           text:
-            "Depuis 4 ans je suis étudiant en école d'ingénieur. J'ai eu une formation très généraliste pendant 3 ans et cette année je me suis spécialisé dans une filière plus informatique orientée data.",
+            "Depuis 5 ans je suis étudiant en école d'ingénieur. J'ai eu une formation très généraliste pendant 3 ans et cette année je me suis spécialisé dans une filière plus informatique orientée data.",
           color: "blue lighten-1"
         },
         {
