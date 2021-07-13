@@ -7,9 +7,9 @@ class PostService {
   static async getPosts() {
     try {
       const res = await axios.get(url);
-      console.log(res.data);
       const data = res.data;
-
+      data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      
       return data.map(post => ({
         ...post,
         prenom: post.Prénom,

@@ -22,7 +22,7 @@
 
           <v-card-subtitle class="grey--text text--lighten-1">
             {{
-              `${post.createdAt.getDate()}/ ${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`
+              `${post.createdAt.getDate()}/${("0" + (post.createdAt.getMonth() + 1)).slice(-2)}/${post.createdAt.getFullYear()}`
             }}
           </v-card-subtitle>
 
