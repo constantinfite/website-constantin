@@ -1,6 +1,5 @@
 const express = require("express");
 const mongodb = require("mongodb");
-
 const router = express.Router();
 
 // Get Posts
@@ -34,7 +33,7 @@ router.delete("/:id", async (req, res) => {
 
 async function loadPostsCollection() {
   const client = await mongodb.MongoClient.connect(
-    "mongodb+srv://constan:Callofduty23@cluster0-ub0gg.mongodb.net/test?retryWrites=true&w=majority",
+    process.env.MONGO_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
