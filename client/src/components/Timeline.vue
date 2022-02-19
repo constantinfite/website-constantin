@@ -13,15 +13,15 @@
         >
           <div class="title">{{ career.date }}</div>
         </span>
-
+        
         <v-card>
           <v-card-title class="card-title font-weight-bold headline">
             {{ career.title }}
           </v-card-title>
-          <v-card-subtitle class="font-weight-bold subtitle-1">
+          <v-card-subtitle class="font-weight-bold font-italic">
             {{ career.lieu }}
           </v-card-subtitle>
-          <v-card-text class="font-weight-bold title">
+          <v-card-text class="font-weight-bold body-1 ">
             {{ career.text }}
           </v-card-text>
         </v-card>
@@ -62,7 +62,7 @@ export default {
           title: " Ecole d'ingénieur ",
           date: "2016 - 2021",
           text:
-            "Depuis 5 ans je suis étudiant en école d'ingénieur. J'ai eu une formation très généraliste pendant 3 ans et cette année je me suis spécialisé dans une filière plus informatique orientée data.",
+            "Actuellement ingénieur en informatique, j'ai eu une formation très généraliste pendant 3 ans et par la suite je me suis spécialisé dans une filière plus informatique orientée data sur 2 ans.",
           color: "blue lighten-1"
         },
         {

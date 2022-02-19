@@ -1,20 +1,23 @@
 <template>
   <div>
     <v-container fluid class="mb-12 main">
-      <div id="home" class="py-10">
-        <p class="display-1">
-          Je m'appelle Constantin
-          <br />Je donne des cours particuliers de la 6ème jusqu'à la Terminale
-          <br />
-          <span class="headline">J'effectue les cours à domicile ou en ligne</span>
-        </p>
-      </div>
+      <v-row justify="center" align="center" class="my-4">
+        <v-col cols="10" md="10" lg="10" xl="10" justify="center">
+          <p class="display-1">
+            Je m'appelle Constantin
+            <br />Je donne des cours particuliers de la 6ème jusqu'à la Terminale
+            <br />
+            <span class="headline">J'effectue les cours à domicile ou en ligne</span>
+          </p>
+        </v-col>
+      </v-row>
+
       <div align="center" class="display-1">Les matières que j'enseigne</div>
       <v-row class="py-10" justify="center" align="center">
         <v-col v-for="(matiere, i) in matières" :key="i" cols="8" md="5" lg="4" xl="3" class="px-3">
           <v-card color="#ffff" elevation="3" class="pt-5">
-            <v-img :src="logo(matiere.img)" contain max-height="130px" />
-            <v-card-title color="#545a72" class="justify-center font-weight-bold headline card-title ">
+            <v-img :src="logo(matiere.img)" contain max-height="80px" />
+            <v-card-title color="#545a72" class="justify-center font-weight-bold headline card-title">
               {{ matiere.title }}
             </v-card-title>
             <v-card-text color="#545a72" class="font-weight-medium title texte">
@@ -24,7 +27,7 @@
         </v-col>
       </v-row>
 
-      <div class="my-2 pt-10" justify="center" align="center">
+      <div class="my-2 pt-4" justify="center" align="center">
         <v-btn
           class="font-weight-bold bouton-header"
           rounded
@@ -40,7 +43,7 @@
     <v-container fluid class="timeline">
       <div id="parcours" class="main">
         <div class="timeline pt-12">
-          <div align="center" class="pb-12 display-3">Mon parcours professionnel</div>
+          <div align="center" class="pb-12 display-2">Mon parcours professionnel</div>
 
           <v-row justify="center" class="pb-12">
             <v-col cols="10" md="8" lg="10" xl="8">
@@ -52,7 +55,7 @@
     </v-container>
     <v-container fluid class="main">
       <div id="experience">
-        <div justify="center" align="center" class="display-3 py-12">Mon expérience</div>
+        <div justify="center" align="center" class="display-2 py-12">Mon expérience</div>
 
         <v-row justify="center" class="pb-12 pt-5">
           <v-col v-for="(exp, i) in exps" :key="i" cols="9" md="12" lg="12" xl="12">
@@ -63,14 +66,14 @@
     </v-container>
     <v-container fluid class="timeline">
       <div id="avis" class="py-12 main">
-        <div justify="center" align="center" class="display-3">Mes avis</div>
+        <div justify="center" align="center" class="display-2">Mes avis</div>
         <v-row id="avis" justify="center" class="mb-12 mt-5">
           <PostComponent />
         </v-row>
       </div>
     </v-container>
     <v-container fluid class="main">
-      <div id="contact" justify="center" align="center" class="mt-12 display-3">Contact</div>
+      <div id="contact" justify="center" align="center" class="mt-12 display-2">Contact</div>
       <div justify="center" align="center">
         <Contact />
       </div>
@@ -124,7 +127,7 @@ export default {
           title: 'Professeur particulier à domicile et en ligne',
           img: 'photo_moi.jpg',
           date: '2019 - Maintenant',
-          text: "Depuis 1 an et demi j'ai effectué des cours particuliers à domicile et en ligne à une dizaine d'élèves. Grâce à tous ces cours effectués j'ai appris à me mettre à la place de l'élève et à comprendre la source du problème. J'adapte ma façon d'enseigner en fonction de l'élève.",
+          text: "Depuis 2019 j'ai enseigné à plus 20 élèves à Montpellier, Avignon et Tahiti. Grâce à tous ces cours effectués j'ai appris à me mettre à la place de l'élève et à comprendre la source du problème. J'adapte ma façon d'enseigner en fonction de l'élève.",
           show: false
         },
         {
